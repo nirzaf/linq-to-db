@@ -1,5 +1,5 @@
-# COURSENAME
-This is the repository for the LinkedIn Learning course [COURSENAME]. The full course is available from [LinkedIn Learning](LICOURSEURL).
+# .NET Essentials: LINQ for databases
+This is the repository for the LinkedIn Learning course `.NET Essentials: LINQ for databases`. The full course is available from [LinkedIn Learning](https://linkedin.com/learning).
 
 [![COURSENAME](COURSEIMAGE)](LICOURSEURL)
 
