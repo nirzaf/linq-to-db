@@ -1,5 +1,5 @@
 # .NET Essentials: LINQ for databases
-This is the repository for the LinkedIn Learning course `.NET Essentials: LINQ for databases`. The full course is available from [LinkedIn Learning](https://linkedin.com/learning).
+This is the repository for the LinkedIn Learning course `.NET Essentials: LINQ for databases`. The full course is available from [LinkedIn Learning][lil-course-url].
 
 [![COURSENAME](COURSEIMAGE)](LICOURSEURL)
 
@@ -14,6 +14,18 @@ Some branches will have a beginning and an end state. These are marked with the 
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+	- [Visual Studio](https://visualstudio.microsoft.com/)
+	- [LINQPad](https://www.linqpad.net/) 
+2. Clone this repository into your local machine using the Visual Studio, or OS command line tool (Powershell, Windows Terminal) or MAC equivalent .
+3. See the intro chapter for information about this course Git branches.
+
+### Instructor
+
+**Walt Ritscher **
+
+_Walt Ritscher is a programmer, UI designer, and staff author at LinkedIn Learning._
+
+Check out some of my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/walt-ritscher?u=104).
+
+[lil-course-url]: https://www.linkedin.com/learning/ten-tips-for-the-c-sharp-developer
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2863044/2863044-1601574454812-16x9.jpg
