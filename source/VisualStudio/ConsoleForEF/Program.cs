@@ -20,16 +20,16 @@ namespace ConsoleForEF
 
 			Console.WriteLine(shipper.CompanyName);
 
-			var products = from p in context.Products
-										 where p.UnitPrice < 20
-										 select new { p.ProductName, p.UnitPrice };
+			//var products = from p in context.Products
+			//							 where p.UnitPrice < 20
+			//							 select new { p.ProductName, p.UnitPrice };
 
-			foreach (var product in products)
-			{
-				Console.WriteLine(product.ProductName);
-			}
-			
-			
+			//foreach (var product in products)
+			//{
+			//	Console.WriteLine($"{product.ProductName}, {product.UnitPrice} ");
+			//}
+
+
 		}
 	}
 }
