@@ -12,23 +12,30 @@ namespace ConsoleForEF
 		{
 			// get the Entity Framework (EF) data context
 			// using the default connection defined in the app.config file
-			var context = new ToursEntities();
+			var context = new NorthwindEntities();
 
 			// work with the EF model classes
 
-			var testimonial = context.Testimonials.First();
+			var shipper = context.Shippers.First();
 
-			Console.WriteLine(testimonial.Comment);
+			Console.WriteLine(shipper.CompanyName);
 
-			var tours = from t in context.Tours
-									orderby t.MaxPeoplePerTour
-									select new { t.TourName, t.Description, t.MaxPeoplePerTour };
+			var products = from p in context.Products
+										 where p.UnitPrice < 20
+										 select new { p.ProductName, p.UnitPrice };
 
-			foreach (var tour in tours)
+			foreach (var product in products)
 			{
-				Console.WriteLine(tour.TourName);
+				Console.WriteLine(product.ProductName);
 			}
-
+			//var context2 = new NorthwindEntities();
+			//var q1 = from o in context2.Orders
+			//				 select new { o.OrderID, o.OrderDate, o.ShipName, o.Shipper };
+			//foreach (var order in q1.Take(6))
+			//{
+				Console.WriteLine(order.Shipper.CompanyName);
+			}
+			
 		}
 	}
 }
