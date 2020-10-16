@@ -28,13 +28,7 @@ namespace ConsoleForEF
 			{
 				Console.WriteLine(product.ProductName);
 			}
-			//var context2 = new NorthwindEntities();
-			//var q1 = from o in context2.Orders
-			//				 select new { o.OrderID, o.OrderDate, o.ShipName, o.Shipper };
-			//foreach (var order in q1.Take(6))
-			//{
-				Console.WriteLine(order.Shipper.CompanyName);
-			}
+			
 			
 		}
 	}

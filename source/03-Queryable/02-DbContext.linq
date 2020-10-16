@@ -1,7 +1,6 @@
 <Query Kind="Statements">
   <Connection>
     <ID>c54576d1-888b-4050-976b-0c662e22b616</ID>
-    <Persist>true</Persist>
     <Driver>EntityFrameworkDbContext</Driver>
     <CustomAssemblyPath>C:\Users\WR\Source\Repos\linq-databases-2858036\source\Assets\ExeEF\ConsoleForEF.exe</CustomAssemblyPath>
     <CustomTypeName>ConsoleForEF.NorthwindEntities</CustomTypeName>
@@ -18,7 +17,7 @@
  // it manages change tracking, so that it know what SQL to generate
  // for updates, deletes and inserts.
  
- // it supports caching, so that subsequenct request for same data hits the cache.
+ // it supports caching, so that subsequent  request for same data hits the cache.
  
  // it uses transactions when SaveChanges is called.
  
