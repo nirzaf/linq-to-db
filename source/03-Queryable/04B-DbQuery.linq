@@ -1,6 +1,6 @@
 <Query Kind="Statements">
   <Connection>
-    <ID>c54576d1-888b-4050-976b-0c662e22b616</ID>
+    <ID>aef7d1f3-9ecd-4b72-8ac7-667df71c9301</ID>
     <Persist>true</Persist>
     <Driver>EntityFrameworkDbContext</Driver>
     <CustomAssemblyPath>C:\Users\WR\Source\Repos\linq-databases-2858036\source\Assets\ExeEF\ConsoleForEF.exe</CustomAssemblyPath>
@@ -19,7 +19,7 @@ context.Regions.Dump();
 var q1 = from r in context.Regions
 				 where r.RegionID == 2
 				 select r;
-// get the reference
+
 q1.Dump();
 Region regionFromQuery = q1.First();
 regionFromQuery.Dump();
