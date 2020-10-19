@@ -10,12 +10,9 @@
   <Namespace>System.Data.Entity</Namespace>
 </Query>
 
-var context = new NorthwindEntities();
-
 // The DB joins are defined in the EF mapping
 // this simplifies common queries.
 
-//context.Customers.Dump();
 
 
 var q2 = from o in Order_Details

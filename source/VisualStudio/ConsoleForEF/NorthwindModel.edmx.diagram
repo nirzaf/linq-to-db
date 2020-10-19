@@ -27,6 +27,13 @@
         <AssociationConnector Association="NorthwindModel.FK_Territories_Region" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.EmployeeTerritories" ManuallyRouted="false" />
       </Diagram>
+      <Diagram DiagramId="564c1e075e034ad6983c611a4eb8a79e" Name="Diagram2" >
+        <EntityTypeShape EntityType="NorthwindModel.Order_Detail" Width="1.875" PointX="3.75" PointY="0.5" />
+        <EntityTypeShape EntityType="NorthwindModel.Order" Width="2.375" PointX="0.75" PointY="0.5" />
+        <AssociationConnector Association="NorthwindModel.FK_Order_Details_Orders" />
+        <EntityTypeShape EntityType="NorthwindModel.Product" Width="2.25" PointX="6.5" PointY="0.5" />
+        <AssociationConnector Association="NorthwindModel.FK_Order_Details_Products" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

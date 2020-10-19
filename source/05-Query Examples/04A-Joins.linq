@@ -9,8 +9,6 @@
   </Connection>
 </Query>
 
-var context = new NorthwindEntities();
-
 // The DB joins are defined in the EF mapping
 // In the entity classes they are represented as Navigation properties.
 // Navigation properties provide a way to navigate an association between two entity types 
