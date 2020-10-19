@@ -7,21 +7,19 @@
     <CustomTypeName>ConsoleForEF.NorthwindEntities</CustomTypeName>
     <AppConfigPath>C:\Users\WR\Source\Repos\linq-databases-2858036\source\Assets\ExeEF\ConsoleForEF.exe.config</AppConfigPath>
   </Connection>
+  <Reference Relative="..\..\..\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll">C:\Users\WR\Source\Repos\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll</Reference>
 </Query>
 
 var context = new NorthwindEntities();
 
-// The DB joins are defined in the EF mapping
-// In the entity classes they are represented as Navigation properties.
-// Navigation properties provide a way to navigate an association between two entity types 
-// They allow you to navigate and manage relationships in both directions
+var q1 = from r in context.Regions
+				 where r.RegionID == 2
+				 select r;
 
-// this simplifies common LINQ queries.
+q1.Dump();
 
+// View the query provider.
+q1.Provider.ToString().Dump();
+// View the expression tree
 
-
-var q2 = from o in Order_Details
-					where o.Order.CustomerID =="ISLAT"
-					select o;
-					
-q2.Dump();
+q1.Expression.Dump();

@@ -1,6 +1,6 @@
 <Query Kind="Statements">
   <Connection>
-    <ID>c54576d1-888b-4050-976b-0c662e22b616</ID>
+    <ID>aef7d1f3-9ecd-4b72-8ac7-667df71c9301</ID>
     <Persist>true</Persist>
     <Driver>EntityFrameworkDbContext</Driver>
     <CustomAssemblyPath>C:\Users\WR\Source\Repos\linq-databases-2858036\source\Assets\ExeEF\ConsoleForEF.exe</CustomAssemblyPath>
@@ -11,15 +11,14 @@
 </Query>
 
 var context = new NorthwindEntities();
-// pull only the columns you need
+// use where to filter the number of rows returned 
+// use projection (via select) to filter the number of columns returned
 
-var q1 = from c in context.Customers
-				select c;
-				
-// check the generated SQL, this gets all columns
-q1.Dump ();
+// Extension method syntax
+var q1 = Customers.Where(c => c.City.StartsWith("S"));
 
-var q2 = from c in context.Customers
+q1.Dump();
 
-				 select new {c.CompanyName, c.Address};
+var q2 = Customers.Where(c => c.City.StartsWith("S")).Select (c=>new { c.CompanyName, c.Address, c.City});
+
 q2.Dump();

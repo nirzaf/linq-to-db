@@ -12,15 +12,14 @@
 
 var context = new NorthwindEntities();
 
-// DbSet and DbQuery implement IQueryable
-// DbQuery represents a non-generic LINQ to Entities query against a DbContext. (EF 6.x)
-// EF Core 2.1, useful to represent non-updateable database Views 
-// EF Core 3, removed from EF
+// DbSet instance is a in memory collection
+// filled from the database
 
-// EF 6
+// changes to items in the DbSet are not commited to DB, unless .SaveChanges is called.
 
-context.Regions.Dump();
-var q1 = from r in context.Regions
-				 where r.RegionID == 2
-				 select r;
-q1.Dump();
+var nwRegion = new Region { RegionID = 44, RegionDescription = "NorthWest" };
+
+context.Regions.Dump("Before Add");
+context.Regions.Add(nwRegion);
+//context.SaveChanges();
+context.Regions.Dump("After Add");

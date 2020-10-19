@@ -9,19 +9,9 @@
   </Connection>
 </Query>
 
-var context = new NorthwindEntities();
+Shippers.Dump();
 
-// The DB joins are defined in the EF mapping
-// In the entity classes they are represented as Navigation properties.
-// Navigation properties provide a way to navigate an association between two entity types 
-// They allow you to navigate and manage relationships in both directions
+var q1 = from s in Shippers	
+					select s;
 
-// this simplifies common LINQ queries.
-
-
-
-var q2 = from o in Order_Details
-					where o.Order.CustomerID =="ISLAT"
-					select o;
-					
-q2.Dump();
+q1.Dump();

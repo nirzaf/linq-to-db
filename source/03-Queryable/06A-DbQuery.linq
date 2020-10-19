@@ -10,21 +10,17 @@
   <Reference Relative="..\..\..\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll">C:\Users\WR\Source\Repos\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll</Reference>
 </Query>
 
+var context = new NorthwindEntities();
 
-//  use results of a query as arguments to another query
+// DbSet and DbQuery implement IQueryable
+// DbQuery represents a non-generic LINQ to Entities query against a DbContext. (EF 6.x)
+// EF Core 2.1, useful to represent non-updateable database Views 
+// EF Core 3, removed from EF
 
+// EF 6
 
-var q1 = from p in Products
-				 where p.UnitPrice > 90
-				 select p.ProductID;
-
-q1.Dump();
-
-Order_Details.Take(10).Dump();
-
-var productIds= q1.ToList();
-var q2 = from o in Order_Details
-				
-				 where productIds.Contains(o.Product.ProductID)
-				 select o;
-q2.Dump();
+context.Regions.Dump();
+var q1 = from r in context.Regions
+				 where r.RegionID == 2
+				 select r;
+q1.Dump	();

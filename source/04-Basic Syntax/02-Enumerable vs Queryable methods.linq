@@ -1,25 +1,20 @@
 <Query Kind="Statements">
   <Connection>
-    <ID>c54576d1-888b-4050-976b-0c662e22b616</ID>
+    <ID>aef7d1f3-9ecd-4b72-8ac7-667df71c9301</ID>
     <Persist>true</Persist>
     <Driver>EntityFrameworkDbContext</Driver>
     <CustomAssemblyPath>C:\Users\WR\Source\Repos\linq-databases-2858036\source\Assets\ExeEF\ConsoleForEF.exe</CustomAssemblyPath>
     <CustomTypeName>ConsoleForEF.NorthwindEntities</CustomTypeName>
     <AppConfigPath>C:\Users\WR\Source\Repos\linq-databases-2858036\source\Assets\ExeEF\ConsoleForEF.exe.config</AppConfigPath>
   </Connection>
-  <Reference Relative="..\..\..\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll">C:\Users\WR\Source\Repos\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll</Reference>
 </Query>
 
-var context = new NorthwindEntities();
-
-
-context.Regions.Dump();
-var q1 = from r in context.Regions
-				 where r.RegionID == 2
-				 select r;
-
+var colors = new List<string>
+						{ "Green", "Blush", "Yellow", "Red", "Orange",
+							"Burgandy", "Purple", "White", "Black", "Blue" ,"Bronze"};
+							
+var q1 = colors.Where(c => c.StartsWith("B") );
 q1.Dump();
 
-// View the expression tree
-
-q1.Expression.Dump();
+var q2 = Products.Where(p => p.ProductName.StartsWith("F"));
+q2.Dump();

@@ -10,21 +10,16 @@
   <Reference Relative="..\..\..\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll">C:\Users\WR\Source\Repos\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll</Reference>
 </Query>
 
+var context = new NorthwindEntities();
 
-//  use results of a query as arguments to another query
+// DbSet instance is a in memory collection
+// filled from the database
 
+// changes to items in the DbSet are not commited to DB, unless .SaveChanges is called.
 
-var q1 = from p in Products
-				 where p.UnitPrice > 90
-				 select p.ProductID;
+var nwRegion = context.Regions.Where(r => r.RegionID==44 ).Single();
+context.Regions.Dump("Before Remove");
+context.Regions.Remove(nwRegion);
 
-q1.Dump();
-
-Order_Details.Take(10).Dump();
-
-var productIds= q1.ToList();
-var q2 = from o in Order_Details
-				
-				 where productIds.Contains(o.Product.ProductID)
-				 select o;
-q2.Dump();
+//context.SaveChanges();
+context.Regions.Dump("After Remove");

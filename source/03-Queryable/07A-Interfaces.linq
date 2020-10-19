@@ -1,6 +1,6 @@
 <Query Kind="Statements">
   <Connection>
-    <ID>c54576d1-888b-4050-976b-0c662e22b616</ID>
+    <ID>aef7d1f3-9ecd-4b72-8ac7-667df71c9301</ID>
     <Persist>true</Persist>
     <Driver>EntityFrameworkDbContext</Driver>
     <CustomAssemblyPath>C:\Users\WR\Source\Repos\linq-databases-2858036\source\Assets\ExeEF\ConsoleForEF.exe</CustomAssemblyPath>
@@ -11,15 +11,12 @@
 </Query>
 
 var context = new NorthwindEntities();
+// Products is DbSet
+context.Products.GetType().Name.Dump("Products property is DbSet");
 
-// DbSet instance is a in memory collection
-// filled from the database
+// this query is DbQuery
+var q = from p in Products
+				select p;
 
-// changes to items in the DbSet are not commited to DB, unless .SaveChanges is called.
-
- context.Regions.Dump();
- var regionRow = context.Regions.First();
- regionRow.Dump();
- regionRow.RegionDescription = "Eastern";
- context.Regions.Dump();
- //context.SaveChanges();
+q.GetType().Name.Dump("The query is DbQuery");
+Products.Select(p => p).GetType().Name.Dump("DbQuery from Extension method");

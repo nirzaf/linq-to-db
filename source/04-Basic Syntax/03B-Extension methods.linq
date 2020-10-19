@@ -9,19 +9,13 @@
   </Connection>
 </Query>
 
-var context = new NorthwindEntities();
+// Extension methods
 
-// The DB joins are defined in the EF mapping
-// In the entity classes they are represented as Navigation properties.
-// Navigation properties provide a way to navigate an association between two entity types 
-// They allow you to navigate and manage relationships in both directions
+// Pipeline the extension methods.
 
-// this simplifies common LINQ queries.
+var orderedResults = Products.OrderBy(p => p.ProductName);
 
+var pipelinedResults = orderedResults.Where(p => p.UnitsInStock == 0);
 
 
-var q2 = from o in Order_Details
-					where o.Order.CustomerID =="ISLAT"
-					select o;
-					
-q2.Dump();
+pipelinedResults.Dump();

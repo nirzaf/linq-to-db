@@ -10,21 +10,18 @@
   <Reference Relative="..\..\..\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll">C:\Users\WR\Source\Repos\linq-2833070\source\VisualStudio\CourseLib\bin\Debug\netstandard2.0\CourseLib.dll</Reference>
 </Query>
 
+// instead of pipelining, add clauses to query expression
+var manyClauses = from p in Products
+												orderby p.UnitPrice
+												where p.UnitsInStock == 0
+												select p.ProductName;
 
-//  use results of a query as arguments to another query
 
 
-var q1 = from p in Products
-				 where p.UnitPrice > 90
-				 select p.ProductID;
+manyClauses.Dump();
 
-q1.Dump();
 
-Order_Details.Take(10).Dump();
 
-var productIds= q1.ToList();
-var q2 = from o in Order_Details
-				
-				 where productIds.Contains(o.Product.ProductID)
-				 select o;
-q2.Dump();
+
+// Learn more about LINQ 
+// https://www.linkedin.com/learning/topics/linq
